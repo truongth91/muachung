@@ -112,7 +112,8 @@
         </div>
     </div>
 </div>
-<div class="depot_form" >
+
+<div class="depot_form" id="content" >
     <% if flash[:alert] %>
         <p id="notice"><%= flash[:alert] %></p>
     <% end %>
@@ -121,7 +122,7 @@
         <p id="notice"><%= notice %></p>
     <% end %>
     <%= form_tag '/login' do %>
-        <fieldset>
+        <fieldset class="field">
             <legend>Log In</legend>
   
             <div>

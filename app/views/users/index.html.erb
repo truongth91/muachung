@@ -116,11 +116,12 @@
  
 <h1>Listing Users</h1>
  
-<table>
+<div>
+<table id="user-table">
     <thead>
         <tr>
             <th>Name</th>
-            <th></th>
+            <th>Action</th>
             <th></th>
             <th></th>
         </tr>
@@ -137,11 +138,13 @@
         <% end %>
     </tbody>
 </table>
- 
-<br>
 
+<br>
+<div class="link">
 <%= link_to 'Product', products_path %>
 </br>
 <%= link_to 'New User', new_user_path %>
 </br>
 <%= link_to 'Login', login_url %>
+</div>
+</div>
