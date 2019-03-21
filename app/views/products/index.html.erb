@@ -368,6 +368,7 @@ alt="Khách sạn Grand Sunrise 3 Đà Nẵng 3.5*">
     
 </script>            <div class="main-layout">
 <!--customize-->
+<!--
 <div>
 
 <p id="notice"><%= notice %></p>
@@ -407,6 +408,7 @@ alt="Khách sạn Grand Sunrise 3 Đà Nẵng 3.5*">
 <%= link_to 'Login', login_url %>
 </div>
 <!--customize-->
+
 				<div class="mod-tab-wrap main-tabs">
 <ul class="rs tab__navs fs-15 fw-rb tt-u ta-c">
 <li><a href="#tab-item1" class="tab__nav active">Deal mới hôm nay</a></li>
@@ -415,40 +417,44 @@ alt="Khách sạn Grand Sunrise 3 Đà Nẵng 3.5*">
 </ul>
 <ul class="rs tab__panels">
 <li id="tab-item1" class="tab__content clearfix active">
-<div class="deal-item travel-deal" title="Combo Xông hơi đá muối Hàn Quốc, massage body 90&#39; Thiên Thanh Beauty & Spa" >
-<div class="inner-deal">
-<div class="wrap-imgdesc">
-<a href="https://muachung.vn/spa-lam-dep/combo-xong-hoi-da-muoi-han-quoc-massage-body-90-thien-thanh-beauty-spa-228355.html?_sc=mc&_tp=re&_zn=home" class="img-thumb-deal" rel="nofollow">
-<img class="img-overlay" alt="Combo Xông hơi đá muối Hàn Quốc, massage body 90&#39; Thiên Thanh Beauty & Spa-1-https://muachungcdn.com/thumb_w/250,99/i:product/229/4/3boqd/thumb.jpg-https://muachungcdn.com/thumb_w/250,99/i:product/229/4/3boqd/thumb.jpg"
-style="border:4; border-color: #FF0000; background-image: url(https://muachungcdn.com/thumb_w/250,99/i:product/229/4/3boqd/thumb.jpg)"
-src="https://muachung.vn/frontEnd/images/null.gif" is-bg="1" />
-</a>
-<div class="discount-lbl">
-<i class="icon iDiscount_mc"></i>
-<span>-45<span class="unit-discount">%</span></span>
-</div>
-</div>
-<div class="grp-bottom-content">
-<div class="grp-name-price">
-<h3 class="rs deal-name">
-<a class="deal-name-val" href="https://muachung.vn/spa-lam-dep/combo-xong-hoi-da-muoi-han-quoc-massage-body-90-thien-thanh-beauty-spa-228355.html?_sc=mc&_tp=re&_zn=home">Combo Xông hơi đá muối Hàn Quốc, massage body 90&#39; Thiên Thanh Beauty & Spa</a>
+<!--item 1 -->
+<% @products.each do |product| %>
+<div class="deal-item travel-deal" title=<%= product.title %>>
+    <div class="inner-deal">
+        <div class="wrap-imgdesc">
+            <%= link_to edit_product_path(product), class:"img-thumb-deal" do %>
+               <%= image_tag("ruby_book.png",class:"img-overlay") %>
+            <% end %>
+            <div class="discount-lbl">
+                <i class="icon iDiscount_mc"></i>
+                <span>-45<span class="unit-discount">%</span></span>
+            </div>
+        </div>
+        <div class="grp-bottom-content">
+            <div class="grp-name-price">
+                <h3 class="rs deal-name">
+<%= link_to edit_product_path(product), class:"deal-name-val" do %>
+    <%= product.description %>
+<% end %>
 </h3>
-<div class="bottom-info">
-<div class="deal-price">
-<span class="sell-val">75.000<span class="unit">đ</span></span>
-<span class="shop-p-val">500.000<span class="unit">đ</span></span>
-</div>
-<div class="deal-buyer-counter clearfix">
-<span class="make-left">Deal mới lên</span>
-</div>
-<a href="https://muachung.vn/spa-lam-dep/combo-xong-hoi-da-muoi-han-quoc-massage-body-90-thien-thanh-beauty-spa-228355.html?_sc=mc&_tp=re&_zn=home" rel="nofollow" class="btn-go-detail">
-<i class="icon iDetail"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>                                                                                                        
+                <div class="bottom-info">
+                    <div class="deal-price">
+                        <span class="sell-val"><%= product.price %><span class="unit">đ</span></span>
+                        <span class="shop-p-val"><%= product.price*10 %><span class="unit">đ</span></span>
+                    </div>
+                    <div class="deal-buyer-counter clearfix">
+                        <span class="make-left">Deal mới lên</span>
+                    </div>
+                    <%= link_to edit_product_path(product), class:"btn-go-detail" do %>
+                        <i class="icon iDetail"></i>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+<% end %>
+<!--end 1st item-->                                                                                            
 <div class="deal-item travel-deal" title="Buffet tối Sen Xanh cao cấp gần 300 món đẳng cấp Á Âu" >
 <div class="inner-deal">
 <div class="wrap-imgdesc">
