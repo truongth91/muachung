@@ -11,29 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="product-field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, :size => 75 %>
   </div>
 
-  <div class="field">
+  <div class="product-field">
     <%= form.label :description %>
-    <%= form.text_area :description, :rows => 6 %>
+    <%= form.text_area :description, :rows => 6, :cols => 80 %>
   </div>
 
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+  <div class="product-field">
+    <%= form.label :"Image's name in asset folder" %>
+    <%= form.text_field :image_url, :size => 75 %>
   </div>
 
-  <div class="field">
+  <div class="product-field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, :size => 75  %>
   </div>
-
+  </br>
   <div class="link">
     <%= form.submit %>
-    <%= link_to 'Back to product', products_path %>
+    <%= link_to '<button type="button">Back to product</button>'.html_safe, products_path %>
   </div>
   
 <% end %>
