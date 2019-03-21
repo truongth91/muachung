@@ -423,7 +423,11 @@ alt="Khách sạn Grand Sunrise 3 Đà Nẵng 3.5*">
     <div class="inner-deal">
         <div class="wrap-imgdesc">
             <%= link_to edit_product_path(product), class:"img-thumb-deal" do %>
-               <%= image_tag("ruby_book.png",class:"img-overlay") %>
+                <% if (product.image_url != "") %>
+               <%= image_tag(product.image_url,class:"img-overlay") %>
+               <% else %>
+               <%= image_tag("no-thumbnail.jpg" ,class:"img-overlay") %>
+               <% end %>
             <% end %>
             <div class="discount-lbl">
                 <i class="icon iDiscount_mc"></i>
