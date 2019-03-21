@@ -411,7 +411,11 @@ alt="Khách sạn Grand Sunrise 3 Đà Nẵng 3.5*">
 				<div class="mod-tab-wrap main-tabs">
 <ul class="rs tab__navs fs-15 fw-rb tt-u ta-c">
 <li><a href="#tab-item1" class="tab__nav active">Deal mới hôm nay</a></li>
-<li><a href="#tab-item2" class="tab__nav">Deal Hot</a></li>
+<li>
+    <%= link_to new_product_path, class:"img-thumb-deal product-upload active" do %>
+        Upload Product
+    <% end %>
+</li>
 <li><a href="#tab-item3" class="tab__nav">Deal dành riêng cho bạn</a></li>
 </ul>
 <ul class="rs tab__panels">
