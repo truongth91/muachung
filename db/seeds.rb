@@ -25,3 +25,13 @@ Product.create(:title => 'The Ruby Programming Language',
     },
     :image_url => 'ruby_book.png',
     :price => 39.99)
+User.delete_all
+User.create(:name => 'admin',
+    :hased_password=>'bf1ef2c764157a95add6303a4a31514dc5af8bbbeb414dbbea954e3e6c514e6a',
+    :salt=>'698987809691800.7088423513133063',
+    :isadmin=>'0')
+    
+User.create(:name => 'user01',
+    :hased_password=>'619d4048e6291ab5fdaad3ef826e90bdbb753a26d0296b3f8ad55f2a551e6231',
+    :salt=>'698988484584000.7130334285100066',
+    :isadmin=>'1')
