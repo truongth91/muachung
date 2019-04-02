@@ -9,7 +9,7 @@ Product.delete_all
 Product.create(:title => 'Learn Web Development with Rails',
     :description => 
     %{
-        Ruby on Rails Tutorial book and screencast series 
+        Ruby on Rails Tutorial book and screencast series
         teach you how to develop and deploy real, 
         industrial-strength web applications with Ruby on Rails.
     },
@@ -23,7 +23,7 @@ Product.create(:title => 'The Ruby Programming Language',
         to Ruby and provides comprehensive coverage 
         of versions 1.8 and 1.9 of the language.
     },
-    :image_url => 'ruby_book.png',
+    :image_url => 'ruby_book.jpg',
     :price => 39.99)
 User.delete_all
 User.create(:name => 'admin',

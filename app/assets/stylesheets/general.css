@@ -1,0 +1,447 @@
+body
+{
+	margin: 0;
+	min-height: 100%;	
+}
+
+#header-top
+{
+	width: 1349px;
+	height: 47px;
+	background: #177fc2;
+}
+
+.container
+{
+	margin-left: 54.5px;
+	margin-right: 54.5px;
+	height: 47px;
+}
+
+#menu-left
+{
+	width: 163px;
+	height: 46px;
+}
+
+#icon-mc-area
+{
+	width: 40px;
+	height: 34px;
+	margin-top: 13px;
+	margin-right: 10px;
+	float: left;
+	background: white;
+	text-align: center;
+}
+
+#icon-mc
+{
+	background: url("https://muachung.vn/frontEnd/dulich/images/home2/icons/iconmc.png") no-repeat; 
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-top: 6px;
+}
+
+#icon-dl-area
+{
+	width: 81px;
+	height: 34px;
+	margin-top: 13px;
+	margin-right: 10px;
+	float: left;
+	text-align: center;
+	padding-right: 11px;
+	padding-left: 11px;
+	background: #349cdf;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	line-height: 2.5;
+}
+
+#icon-dl
+{
+	background: url("https://muachung.vn/frontEnd/dulich/images/home2/icons/icon-travel-white.png") no-repeat; 
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-top: 6px;
+	margin-left: 3px;
+	float: left;
+}
+
+#menu-right
+{
+	width: 250px;
+	height: 47px;
+	background: red;
+	float: right;
+}
+
+#header-mid
+{
+	width: 1349px;
+	height: 82px;
+	background: white;
+}
+
+#logo-area
+{
+	width: 176px;
+	height: 46px;
+	padding-top: 23px;
+	float: left;
+}
+
+#logo
+{
+	width: 176px;
+	height: 46px;
+	background: url("https://muachung.vn/frontEnd/dulich/images/home2/icons/mc.png") no-repeat;
+	display: inline-block;
+}
+
+#login-area
+{
+	width: 176px;
+	height: 46px;
+	padding-top: 23px;
+	float: right;
+	font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    line-height: 2.5;
+	cursor: pointer;
+}
+
+#login
+{
+	width: 46px;
+	height: 46px;
+	background: url("https://muachung.vn/frontEnd/dulich/images/home2/icons/user.png") no-repeat;
+	display: inline-block;
+	float:left;
+}
+
+#login-text
+{
+	width:auto;
+	height: 46px;
+	text-decoration:none;
+	color:black;
+}
+
+#footer-new
+{
+	width: 1349px;
+	height: 48px;
+	display:inline-block;
+	background: #383838;
+	color: #dddddd;
+	position: absolute;
+}
+
+html
+{
+	min-height: 100%;
+	position: relative;
+}
+
+#content
+{
+	min-height: 100%;
+	position: relative;
+	background-color: #f1f1f1;
+}
+
+#content form
+{
+	padding-top: 20px;
+}
+
+#content-top
+{
+	padding:5px 0 10px 0;
+	text-align: center;
+	list-style: none;
+}
+
+.tab
+{
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	background: #e3e3e3;
+	text-align: center;
+	line-height: 2.5;
+}
+
+.tab-item
+{
+	color: #888;
+	text-decoration: none;
+	font-size:18px;
+}
+
+.selected
+{
+	background: #177fc2!important;
+}
+
+.selected a
+{
+	color: white!important;
+	text-decoration: none;
+}
+
+
+#content-main
+{
+	list-style: none;
+}
+
+#content-main ul
+{
+	margin-bottom: 0;
+}
+
+.tab-main
+{
+	display: inline-block;
+	text-align: center;
+	width: 290px;
+	height: 480px;
+	padding: 0 0 26px 24px;
+}
+
+.img-overlay
+{
+	width: 290px;
+	height: 290px;
+}
+
+.discount-lbl
+{
+	position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+
+.wrap-imgdesc
+{
+	position: relative;
+}
+
+.icon
+{
+	background: transparent url(https://muachung.vn/frontEnd/dulich/images/icon.png?v=33) no-repeat;
+    border: none;
+    vertical-align: middle;
+    font-size: 0;
+    line-height: 0;
+	display: inline-block;
+	position: absolute;
+}
+
+.iDiscount_mc
+{
+	width: 50px;
+	height: 50px;
+	background-position: -358px -216px;
+}
+
+.iDetail
+{
+	width: 30px;
+	height: 30px;
+	background-position: 0 -211px;
+}
+
+.grp-bottom-content
+{
+	background-color: white;
+	height: 90px;
+	margin-top: -22px;
+}
+
+.discount-lbl > span
+{
+	position: relative;
+}
+
+.deal-name
+{
+	height: 40px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.deal-price
+{
+	text-align: left;
+	margin-left: 12px;
+}
+
+.sell-val
+{
+	color: #c70000;
+    font-weight: normal;
+	font-size: 18px;
+	margin-right: 4px;
+}
+
+.shop-p-val
+{
+	font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    vertical-align: 1px;
+}
+
+.deal-buyer-counter
+{
+	text-align: left;
+	margin-left: 12px;
+}
+
+.btn-go-detail
+{
+	position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.bottom-info
+{
+	position: relative;
+}
+
+.unit-discount
+{
+	font-size:13px;
+}
+
+.discount-lbl span
+{
+	margin: 0 0 0 3px;
+}
+
+#product-content
+{
+	min-height: 100%;
+}
+
+#content-img
+{
+	width: 460px;
+	height: 460px;
+	float: left;
+	background: transparent url(no-thumbnail.jpg) center;
+	cursor: pointer;
+	border: 1px;
+	border-color: black;
+	border-style: solid;
+}
+
+#content-detail
+{
+	width: 55%;
+	height: 460px;
+	float: right;
+}
+
+.product-field
+{
+	width: 200px;
+	line-height: 25px;
+}
+
+
+.product-field input
+{
+	width: 400px;
+}
+
+.product-field textarea
+{
+	width: 400px;
+	resize: none;
+}
+
+.login-field
+{
+	width: 50px;
+	text-align: center;
+	margin:auto;
+	background: white;
+}
+
+.user-field
+{
+	width: 300px;
+    text-align: center;
+	margin: auto;	
+	background: white;
+}
+
+#user-table
+{
+	width: 600px;
+	text-align: center;
+}
+
+#user-table, #user-table th, #user-table td
+{
+	border: 1px solid black;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.make-right
+{
+	float: right;
+}
+
+.make-left
+{
+	float: left;
+}
+
+.user-lable
+{
+	width: 10%;
+}
+
+.user-value
+{
+	width: 60%;
+	float: right;
+    margin: 7px 0 0 0;
+}
+
+.user-div
+{
+	text-align: left;
+	line-height: 2.5;
+}
+
+#user-create
+{
+	border: none;
+	width:100%;
+}
+
+#user-create tr td:nth-child(1)
+{
+	text-align: left;
+}

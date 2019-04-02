@@ -1,0 +1,35 @@
+
+<div id="footer-new">Clone by truongth
+</div>
+<script>
+    var windowheight = window.innerHeight;
+    var wrapperheight = document.getElementsByClassName('wrapper')[0].offsetHeight;
+    var headerheight = document.getElementById('header-top').offsetHeight + document.getElementById('header-mid').offsetHeight
+    var footerheight = document.getElementById('footer-new').offsetHeight
+    if (wrapperheight < windowheight)
+    {
+		  document.getElementsByClassName('wrapper')[0].style.height = window.innerHeight - headerheight - footerheight + 'px';
+    }
+    function myFunction(event)
+    {
+      document.getElementById('product_image_url').value = document.getElementById('img_url').value;
+      document.getElementById('product_image_url').value = document.getElementById('img_url').files.item(0).name;
+      var files = event.target.files;
+      var image = files[0];
+      var reader = new FileReader();
+      reader.onload = function(file) {
+        var img = new Image();
+        img.src = file.target.result;
+        
+        document.getElementById('content-img').src = img.src;
+      }
+      reader.readAsDataURL(image);
+    }
+
+</script>
+<% if @username != nil && @username !='' %>
+	<script type="text/javascript">
+		document.getElementById('login-text').innerText = "Xin chào <%= @username %> \n Logout";
+    console.log("A"+"<%= @username %>");
+	</script>
+<% end %>

@@ -1,5 +1,4 @@
-<div class="depot_form">
- 
+<div class="wrapper container">
     <%= form_for @user do |f| %>
         <% if @user.errors.any? %>
             <div id="error_explanation">
@@ -12,30 +11,49 @@
             </div>
         <% end %>
   
-        <fieldset class="field">
-        <legend>Enter User Details</legend>
-  
-        <div>
-            <%= f.label :name, 'Name:' %>
-            <%= f.text_field :name, :size => 40 %>
-        </div>
-  
-        <div>
-            <%= f.label :password, 'Password:' %>
-            <%= f.password_field :password, :size => 40 %>
-        </div>
-   
-        <div>
-            <%= f.label :password_confirmation, 'Confirm:' %>
-            <%= f.password_field :password_confirmation, :size => 40 %>
-        </div>
+        <fieldset class="user-field">
+        <legend>Thông tin người dùng</legend>
+
+        
+        <table id="user-create">
+            <tbody>
+                <tr>
+                    <td>
+                        <%= f.label :name, 'UserName:' %> 
+                    </td>
+                    <td>
+                        <%= f.text_field :name %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <%= f.label :password, 'Password:' %>
+                    </td>
+                    <td>
+                        <%= f.password_field :password %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <%= f.label :password_confirmation, 'Confirm:' %>
+                    </td>
+                    <td>
+                        <%= f.password_field :password_confirmation %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         </br>
-        <div class="button">
-            <%= f.submit %>
+        <div>
+        <div class="button make-right">
+            <%= f.submit "Tạo người dùng mới"%>
         </div> 
-        </br>
-        <div class="button">
-            <%= link_to '<button type="button">Back to Login</button>'.html_safe, login_url %>
+        <% if @username != nil && @username != '' %>
+        <div class="button make-left">
+            <%= link_to '<button type="button">Danh sách người dùng</button>'.html_safe, users_path %>
+        </div>
+        <%end%>
         </div>
         </fieldset>
     <% end %>

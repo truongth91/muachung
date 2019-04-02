@@ -1,39 +1,41 @@
+<div id="product-content" class="container wrapper">
 <%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <% if (product.image_url != nil
+  ) %>
+  <%= image_tag(product.image_url,class:"img-overlay", id:"content-img") %>
+  <% else %>
+  <%= image_tag("no-thumbnail.jpg" ,class:"img-overlay", id:"content-img") %>
   <% end %>
+  <div id = "content-detail">
+    <div class="product-field">
+      <%= form.label :"Tên sản phẩm" %>
+      <%= form.text_field :title %>
+    </div>
 
-  <div class="product-field">
-    <%= form.label :title %>
-    <%= form.text_field :title, :size => 75 %>
-  </div>
+    <div class="product-field">
+      <%= form.label :"Mô tả sản phẩm" %>
+      <%= form.text_area :description, :rows => 6, :cols => 80 %>
+    </div>
 
-  <div class="product-field">
-    <%= form.label :description %>
-    <%= form.text_area :description, :rows => 6, :cols => 80 %>
-  </div>
+    <div class="product-field">
+      <%= form.label :"Giá sản phẩm" %>
+      <%= form.text_field :price%>
+    </div>
+    
+    <div class="product-field">
+      <%= form.label :"Đường dẫn hình ảnh đại diện" %>
+      <form action="/action_page.php">
+        <input id="img_url" type="file" name="pic" accept="image/*" oninput="myFunction(event)">
+      </form>
+      <%= form.text_field :image_url %>
+    </div>
 
-  <div class="product-field">
-    <%= form.label :"Image's name in asset folder" %>
-    <%= form.text_field :image_url, :size => 75 %>
-  </div>
-
-  <div class="product-field">
-    <%= form.label :price %>
-    <%= form.text_field :price, :size => 75  %>
-  </div>
-  </br>
-  <div class="link">
-    <%= form.submit %>
-    <%= link_to '<button type="button">Back to product</button>'.html_safe, products_path %>
+    </br>
+    <div class="link">
+      <%= form.submit "Lưu thông tin sản phẩm" %>
+      <%= link_to '<button type="button">Trở về trang chủ</button>'.html_safe, products_path %>
+    </div>
   </div>
   
 <% end %>
+</div>

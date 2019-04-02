@@ -5,27 +5,32 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    check_session
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @users = User.find(params[:id])
+    check_session
   end
 
   # GET /users/new
   def new
     @user = User.new
+    @username = session[:user_name]
   end
 
   # GET /users/1/edit
   def edit
+    check_session
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @username = session[:user_name]
     respond_to do |format|
       if @user.save
         format.html { redirect_to login_url, notice: 'User was successfully created.' }
@@ -70,5 +75,13 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :hashed_password, :salt, :password, :password_confirmation)
+    end
+
+    def check_session
+      if session[:user_id] == nil || session[:user_id] == ''
+        redirect_to login_url
+      else
+        @username = session[:user_name]
+      end
     end
 end

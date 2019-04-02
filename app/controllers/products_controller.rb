@@ -5,27 +5,31 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    set_user
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    set_user
   end
 
   # GET /products/new
   def new
     @product = Product.new
+    set_user
   end
 
   # GET /products/1/edit
   def edit
+    set_user
   end
 
   # POST /products
   # POST /products.json
   def create
+    set_user
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -40,6 +44,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    set_user
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -54,6 +59,11 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    if session[:user_id] == nil
+      @username =  ""
+    else
+      @username = session[:user_name]
+    end
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
@@ -70,5 +80,13 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price)
+    end
+
+    def set_user
+      if session[:user_id] == nil
+        @username =  ""
+      else
+        @username = session[:user_name]
+      end
     end
 end
